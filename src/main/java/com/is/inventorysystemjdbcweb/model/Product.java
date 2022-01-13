@@ -18,6 +18,13 @@ public class Product {
         this.id_supplier = id_supplier;
     }
 
+    public Product(Integer id, String label, Double price, Integer id_supplier) {
+        this.id = id;
+        this.label = label;
+        this.price = price;
+        this.id_supplier = id_supplier;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -53,7 +60,8 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "label='" + label + '\'' +
+                "id=" + id +
+                ", label='" + label + '\'' +
                 ", price=" + price +
                 ", id_supplier=" + id_supplier +
                 '}';

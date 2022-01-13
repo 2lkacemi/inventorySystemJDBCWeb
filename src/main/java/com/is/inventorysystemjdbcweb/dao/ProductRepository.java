@@ -23,10 +23,11 @@ public class ProductRepository {
         String sql = "select * from t_product;";
         ResultSet rs = db.select(sql);
         while (db.next()){
+            int id = rs.getInt("id");
             String label = rs.getString("label");
             Double price = rs.getDouble("price");
             Integer id_supplier = rs.getInt("id_supplier");
-            Product product = new Product(label, price, id_supplier);
+            Product product = new Product(id,label, price, id_supplier);
             listProducts.add(product);
         }
         rs.close();
@@ -50,7 +51,7 @@ public class ProductRepository {
             String label = rs.getString("label");
             Double price = rs.getDouble("price");
             Integer id_supplier = rs.getInt("id_supplier");
-            product = new Product(label, price, id_supplier);
+            product = new Product(id, label, price, id_supplier);
         }
         rs.close();
         db.disconnect();

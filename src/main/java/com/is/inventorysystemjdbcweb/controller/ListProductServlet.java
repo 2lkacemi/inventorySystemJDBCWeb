@@ -17,12 +17,10 @@ public class ListProductServlet extends HttpServlet {
 
     private ProductService productService;
 
-
     @Override
     public void init(){
         productService = new ProductService();
     }
-
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response){
@@ -35,7 +33,6 @@ public class ListProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -9,6 +8,19 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link href="${pageContext.request.contextPath}/formatting/index.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/formatting/index.js" rel="stylesheet">
+
+
 </head>
 <body>
 <section class="testimonial py-5" id="testimonial">
@@ -44,34 +56,39 @@
                 </div>
             </div>
             <div class="col-md-8 py-5 border">
-                <h4 class="pb-4">Those are supplier that we work with .</h4>
-                <table class="table" >
-                    <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">City</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                    </tr>
-                    <c:forEach var="supplier" items="${listSupplier}">
-                        <tr>
-                            <td></td>
-                            <td>
-                                <c:out value="${supplier.name}"/>
-                            </td>
-                            <td>
-                                <c:out value="${supplier.city}"/>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <div class="table-wrapper">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">City</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <c:forEach var="supplier" items="${listSupplier}">
+                            <tr>
+                                <td>
+                                    <c:out value="${supplier.name}"/>
+                                </td>
+                                <td>
+                                    <c:out value="${supplier.city}"/>
+                                </td>
+                                <td>
+                                    <a href="${pageContext.request.contextPath}/update-supplier?id=<c:out value='${supplier.id}'/>" class="edit" ><i class="material-icons" title="Edit">&#xE254;</i></a>
+                                    <a href="${pageContext.request.contextPath}/delete-supplier?id=<c:out value='${supplier.id}'/>" class="delete" ><i class="material-icons" title="Delete">&#xE872;</i></a>
+                                </td>
+                                </c:forEach>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 </body>
 </html>

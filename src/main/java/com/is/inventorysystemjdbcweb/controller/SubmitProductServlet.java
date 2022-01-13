@@ -20,13 +20,14 @@ public class SubmitProductServlet extends HttpServlet {
     public void init(){
        productService = new ProductService();
     }
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
 
-    }
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) {
+        response.setContentType("text/html");
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Product product = new Product();
         String label = (request.getParameter("label"));
         Double price = Double.valueOf(request.getParameter("price"));
@@ -39,7 +40,7 @@ public class SubmitProductServlet extends HttpServlet {
         System.out.println(product);
         productService.addProduct(product);
 
-        response.sendRedirect(request.getContextPath() + "/view/confirmation.jsp");
+        response.sendRedirect(request.getContextPath()+"/list-product");
     }
 
     public void destroy() {

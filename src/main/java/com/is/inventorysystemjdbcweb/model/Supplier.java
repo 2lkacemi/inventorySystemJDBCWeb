@@ -12,6 +12,12 @@ public class Supplier {
         this.city = city;
     }
 
+    public Supplier(Integer id, String name, String city) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+    }
+
     public Supplier() {
     }
 

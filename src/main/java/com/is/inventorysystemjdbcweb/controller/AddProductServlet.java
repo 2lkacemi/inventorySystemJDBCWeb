@@ -12,14 +12,16 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "AddProduct", value = "/add-Product")
-public class AddProduct extends HttpServlet {
+@WebServlet(name = "AddProductServlet", value = "/add-Product")
+public class AddProductServlet extends HttpServlet {
 
     SupplierService supplierService;
+    @Override
     public void init(){
         supplierService = new SupplierService();
     }
 
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             List<Supplier> supplierList = supplierService.getAllSuppliers();
@@ -32,6 +34,7 @@ public class AddProduct extends HttpServlet {
 
     }
 
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     }

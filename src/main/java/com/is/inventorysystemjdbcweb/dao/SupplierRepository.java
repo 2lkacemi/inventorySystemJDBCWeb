@@ -50,7 +50,7 @@ public class SupplierRepository{
         while (db.next()){
             String name = rs.getString("name");
             String city = rs.getString("city");
-            supplier = new Supplier(name, city);
+            supplier = new Supplier(id,name, city);
         }
         rs.close();
         db.disconnect();
