@@ -31,7 +31,7 @@
                 <div class=" ">
                     <div class="card-body">
                         <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
-                        <h2 class="py-3">Add supplier</h2>
+                        <h2 class="py-3">List all products</h2>
                         </p>
                     </div>
                 </div>

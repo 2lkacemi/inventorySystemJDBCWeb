@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="col-md-8 py-5 border">
-                <h4 class="pb-4">Please fill the details about the product you want to add.</h4>
+                <h4 class="pb-4">Please fill the details about the supplier you want to add.</h4>
                 <form method="post" action="../supplier-servlet">
                     <div class="form-row">
                         <div class="form-group col-md-6">
