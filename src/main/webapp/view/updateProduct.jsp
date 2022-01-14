@@ -15,7 +15,7 @@
                 <div class=" ">
                     <div class="card-body">
                         <img src="http://www.ansonika.com/mavia/img/registration_bg.svg" style="width:30%">
-                        <h2 class="py-3">Add product</h2>
+                        <h2 class="py-3">Update product</h2>
                         </p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
                                     <label class="form-check-label" for="invalidCheck2">
-                                        <small>By clicking Submit, you agree to our Terms & Conditions, Visitor Agreement and Privacy Policy.</small>
+                                        <small>By clicking Submit, you agree to our Terms & Conditions.</small>
                                     </label>
                                 </div>
                             </div>
